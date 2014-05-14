@@ -2,11 +2,48 @@
 <html>
     <head lang="en">
         <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="bower_components/foundation/css/foundation.css">
         <title></title>
     </head>
     <body>
         <div ng-controller="LoanCtrl">
-            {{message}}
+            <form>
+                <div class="row">
+                    <div class="large-12 columns">
+                        <label for="name">Loan Name
+                            <input type="text" id="name" ng-model="loan.name" placeholder="What is the name of your loan?">
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-12 columns">
+                        <label for="principal">Principal Amount
+                            <input type="number" id="principal" ng-model="loan.principal" placeholder="How much is the principal balance?">
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-12 columns">
+                        <label for="rate">Interest Rate
+                            <input type="number" id="rate" ng-model="loan.rate" placeholder="What is the interest rate?">
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-12 columns">
+                        <label for="duration">Duration
+                            <input type="number" id="duration" ng-model="loan.duration" placeholder="What is the duration of the loan?">
+                        </label>
+                    </div>
+                </div>
+            </form>
+
+            <div>
+                {{loan.name}} <br/>
+                {{loan.principal}} <br/>
+                {{loan.rate}} <br/>
+                {{loan.duration}}
+            </div>
 
         </div>
 
