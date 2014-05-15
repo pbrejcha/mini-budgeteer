@@ -25,7 +25,7 @@
                 <div class="row">
                     <div class="large-12 columns">
                         <label for="rate">Interest Rate
-                            <input type="number" id="rate" ng-model="loan.rate" placeholder="What is the interest rate?">
+                            <input type="number" step="any" id="rate" ng-model="loan.rate" placeholder="What is the interest rate?">
                         </label>
                     </div>
                 </div>
@@ -36,13 +36,16 @@
                         </label>
                     </div>
                 </div>
+                <button ng-click="calculateMonthlyPayment()">Click Me!</button>
             </form>
 
             <div>
                 {{loan.name}} <br/>
                 {{loan.principal}} <br/>
                 {{loan.rate}} <br/>
-                {{loan.duration}}
+                {{loan.duration}} <br/>
+                {{monthlyPayment}}
+
             </div>
 
         </div>
