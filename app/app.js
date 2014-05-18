@@ -12,9 +12,16 @@ budgeteer.controller('LoanCtrl', ['$scope', function ($scope) {
 
         if($scope.loan){
             $scope.monthlyPayment = $scope.loan.principal * (monthlyInterest / (1 - denominator));
+            $scope.totalPaid = $scope.monthlyPayment * numberOfMonths;
+            $scope.totalDifference = $scope.totalPaid - $scope.loan.principal;
 
         }
     };
+
+    $scope.reset = function () {
+        $scope.monthlyPayment = 0;
+        $scope.totalPaid = 0;
+    }
 }]);
 
 angular.bootstrap(document, ['budgeteer']);
