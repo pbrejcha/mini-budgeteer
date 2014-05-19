@@ -2,42 +2,48 @@
 <html>
     <head lang="en">
         <meta charset="UTF-8">
+        <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="bower_components/foundation/css/foundation.css">
         <link rel="stylesheet" type="text/css" href="app.css">
         <title></title>
     </head>
     <body>
+        <header>
+            <h1>budgeteer</h1>
+        </header>
+        <hr>
         <div ng-controller="LoanCtrl">
             <form>
                 <div class="row">
                     <div class="large-12 columns">
                         <label for="name">Loan Name
-                            <input type="text" id="name" ng-model="loan.name" ng-change="reset()" placeholder="What is the name of your loan?">
+                            <input type="text" id="name" ng-model="loan.name"  placeholder="What is the name of your loan?">
                         </label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="large-12 columns">
                         <label for="principal">Principal Amount
-                            <input type="number" id="principal" ng-model="loan.principal" ng-change="reset()" placeholder="How much is the principal balance?">
+                            <input type="number" id="principal" ng-model="loan.principal"  placeholder="How much is the principal balance?">
                         </label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="large-12 columns">
                         <label for="rate">Interest Rate
-                            <input type="number" step="any" id="rate" ng-model="loan.rate" ng-change="reset()" placeholder="What is the interest rate?">
+                            <input type="number" step="any" id="rate" ng-model="loan.rate"  placeholder="What is the interest rate?">
                         </label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="large-12 columns">
                         <label for="duration">Duration
-                            <input type="number" id="duration" ng-model="loan.duration" ng-change="reset()" placeholder="What is the duration of the loan?">
+                            <input type="number" id="duration" ng-model="loan.duration"  placeholder="What is the duration of the loan?">
                         </label>
                     </div>
                 </div>
                 <button ng-click="calculateMonthlyPayment()">Calculate Loan</button>
+                <button ng-click="reset()">Clear Form</button>
             </form>
 
             <div>

@@ -19,8 +19,16 @@ budgeteer.controller('LoanCtrl', ['$scope', function ($scope) {
     };
 
     $scope.reset = function () {
-        $scope.monthlyPayment = 0;
-        $scope.totalPaid = 0;
+        var loan = {
+            name : '',
+            principal : '',
+            rate : '',
+            duration : ''
+        };
+        $scope.loan = loan;
+        $scope.monthlyPayment = '';
+        $scope.totalPaid = '';
+        $scope.totalDifference = '';
     }
 }]);
 
